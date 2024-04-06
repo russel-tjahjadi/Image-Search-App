@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,600&display=swap"); /* imported from google fonts: */
+
+/* Default stylings for our page: */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  line-height: 1.6; /* The heights between texts */
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin: 40px 0 60px 0;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+/* styling the search input box from the id we assigned: */
+
+/* styling the input box */
+#search_input {
+  width: 60%;
+  max-width: 400px;
+  padding: 10px 20px;
+  border: none;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  font-size: 18px;
+  color: #333;
+}
+
+/* styling the "Search" button */
+#search_button {
+  padding: 10px 20px;
+  background-color: forestgreen;
+  color: antiquewhite; /* the color of the text inside the box */
+  border: none;
+  font-size: 18px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer; /* "the cursor is a pointer that indicates a link" */
+  border-radius: 10px; /* gives that rounded shape */
+  margin-left: 10px; /* padding from the left */
+}
+
+.search_results {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto; /* top-bottom:0 left-right:auto */
+}
+
+.search_result {
+  margin-bottom: 60px;
+  width: 30%;
+  height: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* when the content does not fit inside the box, we hide it */
+}
+
+/* targets the image inside the box because it does not seem to be the appropriate size */
+.search_result img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: opacity 0.2s ease-in-out; /* smoother transition to transition opacity between images */
+}
+
+/* when image is hovered, the image has an effect of becoming lighter in color */
+.search_result:hover img {
+  opacity: 0.7;
+}
+
+/* the link(text) below the images */
+.search_result a {
+  font-size: 20px;
+  text-decoration: none; /* removing the underlines */
+  color: black;
+  display: block;
+  padding: 13px;
+  text-transform: capitalize;
+}
+
+#show_more_button {
+  background-color: #008cba;
+  font-size: 20px;
+  border: none;
+  color: white;
+  padding: 10px 10px; /* spacing of the text inside the box */
+  text-align: center;
+  display: block;
+  margin: 30px auto; /* spacing of the whole button in the webpage */
+  border-radius: 10px;
+  cursor: pointer;
+  display: none; /* at first we do not want to show the "show more" button */
+}
+
+/* making the webpage responsive: */
+@media screen and (max-width: 768px) {
+  .search_results {
+    padding: 20px; /* padding for each of the search_result */
+  }
+
+  .search_result {
+    width: 45%; /* width of the image is 45% when the webpage is around 768px */
+  }
+}
+@media screen and (max-width: 500px) {
+  .search_result {
+    width: 100%; /* width of the image is 45% when the webpage is around 500px */
+  }
+}
